@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "portal": "Client Portal",
+    "quickRequest": "Quick Request",
+    "quote": "Request Quote"
+  },
+  "hero": {
+    "badge": "Since 2016 — Your Partner for Safe Transport",
+    "title": "Vehicle & Cargo Transport",
+    "titleHighlight": "Personal. Reliable. Switzerland-wide.",
+    "subtitle": "Teimur Alizadeh drives himself — no subcontractors, no middlemen. Your vehicle is in the owner's hands.",
+    "cta": "Request Now",
+    "ctaSecondary": "Request Quote",
+    "stat1Value": "5000+",
+    "stat1Label": "Vehicles Transported",
+    "stat2Value": "10+",
+    "stat2Label": "Years Experience",
+    "stat3Value": "24h",
+    "stat3Label": "Quote Guarantee"
+  },
+  "services": {
+    "badge": "What we transport",
+    "title": "Our Services",
+    "subtitle": "From a single vehicle to regular company orders — we have the right solution.",
+    "card1Title": "Vehicle Transport",
+    "card1Desc": "Cars, minibuses and commercial vehicles up to 3,500 kg — safely loaded, delivered on time.",
+    "card2Title": "Cargo Transport",
+    "card2Desc": "Reliable transport of goods throughout Switzerland and Europe.",
+    "card3Title": "EU Import & Export",
+    "card3Desc": "Complete handling incl. customs clearance, import and export documents for all EU member states.",
+    "card4Title": "Business Clients",
+    "card4Desc": "Priority processing, dedicated client portal, billing overview — for regular orders."
+  },
+  "pricing": {
+    "badge": "Transparency",
+    "title": "How Your Price is Calculated",
+    "subtitle": "No fixed price — because every transport is unique. We calculate fairly and transparently.",
+    "factor1Title": "Distance",
+    "factor1Desc": "Distance between pickup and delivery location in Switzerland or EU.",
+    "factor2Title": "Vehicle Type",
+    "factor2Desc": "The type and size of the vehicle or goods determines the effort.",
+    "factor3Title": "Weight",
+    "factor3Desc": "The total weight influences the choice of transport equipment.",
+    "factor4Title": "Accessibility",
+    "factor4Desc": "Narrow roads, difficult parking areas or special on-site requirements.",
+    "cta": "Free Quote — Response within 24h"
+  },
+  "about": {
+    "badge": "The person behind it",
+    "title": "Teimur Alizadeh",
+    "subtitle": "Owner & Driver",
+    "body": "I'm not just the owner — I'm the one who personally transports your vehicle. Since 2016 I stand behind every order personally. No subcontractors, no surprises.",
+    "fact1": "In transport since 2016",
+    "fact2": "Over 5,000 vehicles transported",
+    "fact3": "Licensed in Switzerland & EU"
+  },
+  "partners": {
+    "badge": "Trusted for years",
+    "title": "Our Regular Clients"
+  },
+  "reviews": {
+    "badge": "What clients say",
+    "title": "Google Reviews"
+  },
+  "blog": {
+    "badge": "Knowledge & News",
+    "title": "Guide & Updates",
+    "readMore": "Read more"
+  },
+  "quickForm": {
+    "title": "Quick Request",
+    "subtitle": "Filled out in 2 minutes — we'll get back to you within 24 hours.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "customerType": "Customer type",
+    "private": "Private person",
+    "company": "Company",
+    "pickup": "Pickup location",
+    "delivery": "Delivery location",
+    "vehicle": "Vehicle / Goods",
+    "vehiclePlaceholder": "e.g. VW Golf, motorbike, pallet...",
+    "date": "Desired date",
+    "dateNote": "Pickup date or latest delivery date",
+    "submit": "Send request",
+    "success": "Thank you — we'll be in touch within 24h!",
+    "needMore": "Need a detailed quote?",
+    "needMoreLink": "Click here"
+  },
+  "quoteForm": {
+    "title": "Detailed Quote",
+    "subtitle": "Fill in all details — so we can create a precise offer for you.",
+    "customerType": "Customer type",
+    "private": "Private person",
+    "company": "Company",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "companyName": "Company name",
+    "vehicleMake": "Make & Model",
+    "vehicleYear": "Year",
+    "vehicleWeight": "Weight (kg)",
+    "vehicleCondition": "Condition",
+    "running": "Running",
+    "notRunning": "Not running",
+    "pickup": "Pickup location (incl. postcode)",
+    "delivery": "Delivery location (incl. postcode)",
+    "date": "Transport date",
+    "priority": "Priority",
+    "standard": "Standard",
+    "express": "Express (urgent)",
+    "notes": "Special notes",
+    "notesPlaceholder": "Narrow access, special requirements, etc.",
+    "submit": "Request quote",
+    "success": "Thank you — your quote request has been received. We'll be in touch within 24h!"
+  },
+  "footer": {
+    "company": "Agrin Transporte",
+    "tagline": "Personal transport. Reliable since 2016.",
+    "links": "Links",
+    "legal": "Legal",
+    "imprint": "Imprint",
+    "privacy": "Privacy Policy",
+    "address": "Speerstrasse 9, 8634 Hombrechtikon",
+    "allRights": "All rights reserved."
+  }
+}

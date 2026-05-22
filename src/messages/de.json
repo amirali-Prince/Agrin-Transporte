@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "services": "Leistungen",
+    "about": "Über uns",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "portal": "Firmenportal",
+    "quickRequest": "Schnellanfrage",
+    "quote": "Offerte anfragen"
+  },
+  "hero": {
+    "badge": "Seit 2016 — Ihr Partner für sicheren Transport",
+    "title": "Fahrzeug- & Gütertransport",
+    "titleHighlight": "Persönlich. Zuverlässig. Schweizweit.",
+    "subtitle": "Teimur Alizadeh fährt selbst — kein Subunternehmer, kein Mittelsmann. Ihr Fahrzeug ist in den Händen des Inhabers.",
+    "cta": "Jetzt anfragen",
+    "ctaSecondary": "Offerte anfordern",
+    "stat1Value": "5000+",
+    "stat1Label": "Transportierte Fahrzeuge",
+    "stat2Value": "10+",
+    "stat2Label": "Jahre Erfahrung",
+    "stat3Value": "24h",
+    "stat3Label": "Offerte Garantie"
+  },
+  "services": {
+    "badge": "Was wir transportieren",
+    "title": "Unsere Leistungen",
+    "subtitle": "Vom Einzelfahrzeug bis zum regelmässigen Firmenauftrag — wir haben die richtige Lösung.",
+    "card1Title": "Fahrzeugtransport",
+    "card1Desc": "PKW, Kleinbusse und Nutzfahrzeuge bis 3'500 kg — sicher verladen, pünktlich geliefert.",
+    "card2Title": "Gütertransport",
+    "card2Desc": "Zuverlässiger Transport von Gütern in der ganzen Schweiz und Europa.",
+    "card3Title": "EU-Import & Export",
+    "card3Desc": "Komplette Abwicklung inkl. Verzollung, Import- und Exportpapiere für alle EU-Mitgliedsstaaten.",
+    "card4Title": "Firmenkunden",
+    "card4Desc": "Priorisierte Bearbeitung, eigenes Kundenportal, Abrechnungsübersicht — für regelmässige Aufträge."
+  },
+  "pricing": {
+    "badge": "Transparenz",
+    "title": "So entsteht Ihr Preis",
+    "subtitle": "Kein Fixpreis — weil jeder Transport einzigartig ist. Wir berechnen fair und transparent.",
+    "factor1Title": "Strecke",
+    "factor1Desc": "Distanz zwischen Abholort und Lieferort in der Schweiz oder EU.",
+    "factor2Title": "Fahrzeugtyp",
+    "factor2Desc": "Art und Grösse des Fahrzeugs oder der Güter bestimmen den Aufwand.",
+    "factor3Title": "Gewicht",
+    "factor3Desc": "Das Gesamtgewicht beeinflusst die Wahl des Transportmittels.",
+    "factor4Title": "Zugänglichkeit",
+    "factor4Desc": "Enge Strassen, schwierige Abstellflächen oder spezielle Anforderungen vor Ort.",
+    "cta": "Kostenlose Offerte — Antwort in 24h"
+  },
+  "about": {
+    "badge": "Der Mensch dahinter",
+    "title": "Teimur Alizadeh",
+    "subtitle": "Inhaber & Fahrer",
+    "body": "Ich bin nicht nur der Inhaber — ich bin auch derjenige, der Ihr Fahrzeug persönlich transportiert. Seit 2016 stehe ich für jeden Auftrag selbst gerade. Kein Subunternehmer, keine Überraschungen.",
+    "fact1": "Seit 2016 im Transportgewerbe",
+    "fact2": "Über 5'000 Fahrzeuge transportiert",
+    "fact3": "Schweizweit & EU zugelassen"
+  },
+  "partners": {
+    "badge": "Vertrauen seit Jahren",
+    "title": "Unsere Stammkunden"
+  },
+  "reviews": {
+    "badge": "Was Kunden sagen",
+    "title": "Google Bewertungen"
+  },
+  "blog": {
+    "badge": "Wissen & News",
+    "title": "Ratgeber & Aktuelles",
+    "readMore": "Weiterlesen"
+  },
+  "quickForm": {
+    "title": "Schnellanfrage",
+    "subtitle": "In 2 Minuten ausgefüllt — wir melden uns innerhalb von 24 Stunden.",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "customerType": "Kundentyp",
+    "private": "Privatperson",
+    "company": "Unternehmen",
+    "pickup": "Abholort",
+    "delivery": "Lieferort",
+    "vehicle": "Fahrzeug / Güter",
+    "vehiclePlaceholder": "z.B. VW Golf, Motorrad, Palette...",
+    "date": "Gewünschtes Datum",
+    "dateNote": "Abholdatum oder spätestes Lieferdatum",
+    "submit": "Anfrage senden",
+    "success": "Danke — wir melden uns innerhalb von 24h!",
+    "needMore": "Detaillierte Offerte benötigt?",
+    "needMoreLink": "Hier klicken"
+  },
+  "quoteForm": {
+    "title": "Detaillierte Offerte",
+    "subtitle": "Füllen Sie alle Angaben aus — so können wir Ihnen ein präzises Angebot erstellen.",
+    "customerType": "Kundentyp",
+    "private": "Privatperson",
+    "company": "Unternehmen",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "companyName": "Firmenname",
+    "vehicleMake": "Marke & Modell",
+    "vehicleYear": "Baujahr",
+    "vehicleWeight": "Gewicht (kg)",
+    "vehicleCondition": "Zustand",
+    "running": "Fahrbereit",
+    "notRunning": "Nicht fahrbereit",
+    "pickup": "Abholort (inkl. PLZ)",
+    "delivery": "Lieferort (inkl. PLZ)",
+    "date": "Transportdatum",
+    "priority": "Priorität",
+    "standard": "Standard",
+    "express": "Express (dringend)",
+    "notes": "Besondere Hinweise",
+    "notesPlaceholder": "Enge Zufahrt, spezielle Anforderungen, etc.",
+    "submit": "Offerte anfordern",
+    "success": "Danke — Ihre Offertanfrage ist eingegangen. Wir melden uns innerhalb von 24h!"
+  },
+  "footer": {
+    "company": "Agrin Transporte",
+    "tagline": "Persönlicher Transport. Zuverlässig seit 2016.",
+    "links": "Links",
+    "legal": "Rechtliches",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "address": "Speerstrasse 9, 8634 Hombrechtikon",
+    "allRights": "Alle Rechte vorbehalten."
+  }
+}

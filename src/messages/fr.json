@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "À propos",
+    "blog": "Blog",
+    "contact": "Contact",
+    "portal": "Espace client",
+    "quickRequest": "Demande rapide",
+    "quote": "Demander un devis"
+  },
+  "hero": {
+    "badge": "Depuis 2016 — Votre partenaire pour un transport sûr",
+    "title": "Transport de véhicules & marchandises",
+    "titleHighlight": "Personnel. Fiable. Dans toute la Suisse.",
+    "subtitle": "Teimur Alizadeh conduit lui-même — pas de sous-traitant, pas d'intermédiaire. Votre véhicule est entre les mains du propriétaire.",
+    "cta": "Demander maintenant",
+    "ctaSecondary": "Demander un devis",
+    "stat1Value": "5000+",
+    "stat1Label": "Véhicules transportés",
+    "stat2Value": "10+",
+    "stat2Label": "Ans d'expérience",
+    "stat3Value": "24h",
+    "stat3Label": "Garantie devis"
+  },
+  "services": {
+    "badge": "Ce que nous transportons",
+    "title": "Nos prestations",
+    "subtitle": "D'un véhicule unique aux commandes régulières — nous avons la bonne solution.",
+    "card1Title": "Transport de véhicules",
+    "card1Desc": "Voitures, minibus et utilitaires jusqu'à 3'500 kg — chargés en toute sécurité, livrés à temps.",
+    "card2Title": "Transport de marchandises",
+    "card2Desc": "Transport fiable de marchandises dans toute la Suisse et en Europe.",
+    "card3Title": "Import & Export UE",
+    "card3Desc": "Traitement complet incl. dédouanement, documents d'import et d'export pour tous les États membres de l'UE.",
+    "card4Title": "Clients entreprises",
+    "card4Desc": "Traitement prioritaire, portail client dédié, aperçu de facturation — pour les commandes régulières."
+  },
+  "pricing": {
+    "badge": "Transparence",
+    "title": "Comment votre prix est calculé",
+    "subtitle": "Pas de prix fixe — car chaque transport est unique. Nous calculons de manière juste et transparente.",
+    "factor1Title": "Distance",
+    "factor1Desc": "Distance entre le lieu de prise en charge et de livraison en Suisse ou dans l'UE.",
+    "factor2Title": "Type de véhicule",
+    "factor2Desc": "Le type et la taille du véhicule ou des marchandises détermine l'effort.",
+    "factor3Title": "Poids",
+    "factor3Desc": "Le poids total influence le choix du moyen de transport.",
+    "factor4Title": "Accessibilité",
+    "factor4Desc": "Routes étroites, zones de stationnement difficiles ou exigences particulières sur place.",
+    "cta": "Devis gratuit — Réponse sous 24h"
+  },
+  "about": {
+    "badge": "La personne derrière",
+    "title": "Teimur Alizadeh",
+    "subtitle": "Propriétaire & Chauffeur",
+    "body": "Je ne suis pas seulement le propriétaire — je suis celui qui transporte personnellement votre véhicule. Depuis 2016, je réponds personnellement de chaque commande. Pas de sous-traitants, pas de surprises.",
+    "fact1": "Dans le transport depuis 2016",
+    "fact2": "Plus de 5'000 véhicules transportés",
+    "fact3": "Autorisé en Suisse et dans l'UE"
+  },
+  "partners": {
+    "badge": "Confiance depuis des années",
+    "title": "Nos clients fidèles"
+  },
+  "reviews": {
+    "badge": "Ce que disent les clients",
+    "title": "Avis Google"
+  },
+  "blog": {
+    "badge": "Savoir & Actualités",
+    "title": "Guide & Actualités",
+    "readMore": "Lire la suite"
+  },
+  "quickForm": {
+    "title": "Demande rapide",
+    "subtitle": "Rempli en 2 minutes — nous vous répondons dans les 24 heures.",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "customerType": "Type de client",
+    "private": "Particulier",
+    "company": "Entreprise",
+    "pickup": "Lieu de prise en charge",
+    "delivery": "Lieu de livraison",
+    "vehicle": "Véhicule / Marchandises",
+    "vehiclePlaceholder": "ex. VW Golf, moto, palette...",
+    "date": "Date souhaitée",
+    "dateNote": "Date de prise en charge ou date de livraison au plus tard",
+    "submit": "Envoyer la demande",
+    "success": "Merci — nous vous contacterons dans les 24h !",
+    "needMore": "Besoin d'un devis détaillé ?",
+    "needMoreLink": "Cliquez ici"
+  },
+  "quoteForm": {
+    "title": "Devis détaillé",
+    "subtitle": "Remplissez tous les détails — nous pourrons ainsi vous faire une offre précise.",
+    "customerType": "Type de client",
+    "private": "Particulier",
+    "company": "Entreprise",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "companyName": "Nom de l'entreprise",
+    "vehicleMake": "Marque & Modèle",
+    "vehicleYear": "Année",
+    "vehicleWeight": "Poids (kg)",
+    "vehicleCondition": "État",
+    "running": "En état de marche",
+    "notRunning": "Hors service",
+    "pickup": "Lieu de prise en charge (avec NPA)",
+    "delivery": "Lieu de livraison (avec NPA)",
+    "date": "Date de transport",
+    "priority": "Priorité",
+    "standard": "Standard",
+    "express": "Express (urgent)",
+    "notes": "Remarques particulières",
+    "notesPlaceholder": "Accès étroit, exigences particulières, etc.",
+    "submit": "Demander le devis",
+    "success": "Merci — votre demande de devis a été reçue. Nous vous contacterons dans les 24h !"
+  },
+  "footer": {
+    "company": "Agrin Transporte",
+    "tagline": "Transport personnel. Fiable depuis 2016.",
+    "links": "Liens",
+    "legal": "Mentions légales",
+    "imprint": "Impressum",
+    "privacy": "Politique de confidentialité",
+    "address": "Speerstrasse 9, 8634 Hombrechtikon",
+    "allRights": "Tous droits réservés."
+  }
+}
