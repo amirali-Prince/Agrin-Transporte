@@ -7,7 +7,7 @@ export default async function DashboardPage({ params }: { params: Promise<{ loca
   const { locale } = await params
   const session = await getSession()
   if (!session) redirect(`/${locale}/portal/login`)
-  if (session.roles.includes('admin') && !session.roles.includes('fahrer')) {
+  if (session.roles.includes('admin')) {
     redirect(`/${locale}/portal/admin`)
   }
 
