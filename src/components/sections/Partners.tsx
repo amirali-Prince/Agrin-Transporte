@@ -1,13 +1,14 @@
 'use client'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
-const placeholderLogos = [
-  { id: 1, name: 'Partner 1' },
-  { id: 2, name: 'Partner 2' },
-  { id: 3, name: 'Partner 3' },
-  { id: 4, name: 'Partner 4' },
-  { id: 5, name: 'Partner 5' },
+const LOGOS = [
+  { name: 'AMAG', src: '/partner/Amag.svg' },
+  { name: 'Black Sea', src: '/partner/Black sea.svg' },
+  { name: 'F&B', src: '/partner/F&B.svg' },
+  { name: 'K LEE', src: '/partner/K LEE.svg' },
+  { name: 'Power', src: '/partner/POwer.svg' },
 ]
 
 export default function Partners() {
@@ -20,17 +21,18 @@ export default function Partners() {
           <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#C9A84C] mb-2 block">{t('badge')}</span>
           <h2 className="text-2xl font-bold text-white">{t('title')}</h2>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
-          {placeholderLogos.map((logo, i) => (
+        <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14">
+          {LOGOS.map((logo, i) => (
             <motion.div
-              key={logo.id}
+              key={logo.name}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="w-32 h-14 rounded-xl bg-white/5 border border-white/8 flex items-center justify-center hover:border-[#C9A84C]/30 transition-colors"
+              className="relative w-28 h-10 opacity-30 grayscale hover:opacity-70 hover:grayscale-0 transition-all duration-300"
+              title={logo.name}
             >
-              <span className="text-white/20 text-xs font-medium">{logo.name}</span>
+              <Image src={logo.src} alt={logo.name} fill className="object-contain" sizes="112px" />
             </motion.div>
           ))}
         </div>
