@@ -16,26 +16,25 @@ export default function PortalLogin() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <Link href={`/${locale}`}>
-            <Image src="/logo.png" alt="Agrin Transporte" width={120} height={40} className="h-10 w-auto mx-auto mb-6" />
+            <Image src="/logo.png" alt="Agrin Transport" width={120} height={40} className="h-10 w-auto mx-auto mb-6" />
           </Link>
           <h1 className="text-2xl font-bold text-white">Firmenportal</h1>
-          <p className="text-white/40 text-sm mt-1">Melden Sie sich mit Ihrem Firmenkonto an</p>
+          <p className="text-white/40 text-sm mt-1">E-Mail oder Telefonnummer</p>
         </div>
 
         <form action={action} className="bg-zinc-950 border border-white/[0.08] rounded-2xl p-6 space-y-4">
           {state?.error && (
-            <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-3 text-red-400 text-sm">
-              {state.error}
-            </div>
+            <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-3 text-red-400 text-sm">{state.error}</div>
           )}
           <div>
-            <label className="block text-xs text-white/50 mb-1.5">E-Mail</label>
+            <label className="block text-xs text-white/50 mb-1.5">E-Mail oder Telefonnummer</label>
             <input
-              type="email"
-              name="email"
+              type="text"
+              name="identifier"
               required
-              autoComplete="email"
-              className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors"
+              autoComplete="username"
+              placeholder="kontakt@agrin.ch oder +41 76 545 66 06"
+              className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm placeholder-white/20 focus:outline-none focus:border-[#C9A84C]/50 transition-colors"
             />
           </div>
           <div>
@@ -57,12 +56,8 @@ export default function PortalLogin() {
           </button>
         </form>
 
-        <p className="text-center text-white/25 text-xs mt-6">
-          Noch kein Firmenkonto?{' '}
-          <a href="mailto:info@agrin-transport.ch" className="text-[#C9A84C] hover:underline">info@agrin-transport.ch</a>
-        </p>
-        <div className="text-center mt-4">
-          <Link href={`/${locale}`} className="text-white/30 hover:text-white text-xs transition-colors">
+        <div className="text-center mt-6">
+          <Link href={`/${locale}`} className="text-white/25 hover:text-white text-xs transition-colors">
             ← Zurück zur Website
           </Link>
         </div>

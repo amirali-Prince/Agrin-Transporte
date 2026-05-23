@@ -5,5 +5,5 @@ export default async function PortalPage({ params }: { params: Promise<{ locale:
   const { locale } = await params
   const session = await getSession()
   if (!session) redirect(`/${locale}/portal/login`)
-  redirect(session.role === 'admin' ? `/${locale}/portal/admin` : `/${locale}/portal/dashboard`)
+  redirect(session.roles.includes('admin') ? `/${locale}/portal/admin` : `/${locale}/portal/dashboard`)
 }

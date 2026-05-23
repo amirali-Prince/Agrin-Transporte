@@ -9,11 +9,14 @@ function secret() {
   return new TextEncoder().encode(s)
 }
 
+export type Role = 'admin' | 'fahrer' | 'kunde'
+
 export type SessionPayload = {
   userId: string
-  email: string
-  name: string
-  role: 'admin' | 'kunde'
+  firstName: string
+  lastName: string
+  roles: Role[]
+  company?: string
 }
 
 export async function createSession(payload: SessionPayload) {
@@ -48,4 +51,12 @@ export async function getSession(): Promise<SessionPayload | null> {
 export async function deleteSession() {
   const store = await cookies()
   store.delete(COOKIE)
+}
+
+export function hasRole(session: SessionPayload, role: Role) {
+  return session.roles.includes(role)
+}
+
+export function greeting(session: SessionPayload) {
+  return `Grüezi Herr ${session.lastName}`
 }
