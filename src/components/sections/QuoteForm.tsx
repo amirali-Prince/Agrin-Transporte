@@ -6,14 +6,47 @@ export default function QuoteForm() {
   const t = useTranslations('quoteForm')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [customerType, setCustomerType] = useState<'private' | 'company'>('private')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 800))
-    setLoading(false)
-    setSubmitted(true)
+    setError(null)
+
+    const fd = new FormData(e.currentTarget)
+    const payload = {
+      formType: 'quote',
+      customerType,
+      firstName: fd.get('firstName') as string,
+      lastName: fd.get('lastName') as string,
+      email: fd.get('email') as string,
+      phone: fd.get('phone') as string,
+      companyName: fd.get('companyName') as string | undefined,
+      vehicleMake: fd.get('vehicleMake') as string,
+      vehicleYear: fd.get('vehicleYear') as string | undefined,
+      vehicleWeight: fd.get('vehicleWeight') as string,
+      vehicleCondition: fd.get('vehicleCondition') as string,
+      pickup: fd.get('pickup') as string,
+      delivery: fd.get('delivery') as string,
+      date: fd.get('date') as string,
+      priority: fd.get('priority') as string,
+      notes: fd.get('notes') as string | undefined,
+    }
+
+    try {
+      const res = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      if (!res.ok) throw new Error()
+      setSubmitted(true)
+    } catch {
+      setError('Etwas ist schiefgelaufen. Bitte ruf uns direkt an: +41 76 545 66 06')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -56,29 +89,29 @@ export default function QuoteForm() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-xs text-white/50 mb-1.5">{t('firstName')} *</label>
-              <input required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+              <input name="firstName" required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
             </div>
             <div>
               <label className="block text-xs text-white/50 mb-1.5">{t('lastName')} *</label>
-              <input required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+              <input name="lastName" required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-xs text-white/50 mb-1.5">{t('email')} *</label>
-              <input required type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+              <input name="email" required type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
             </div>
             <div>
               <label className="block text-xs text-white/50 mb-1.5">{t('phone')} *</label>
-              <input required type="tel" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+              <input name="phone" required type="tel" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
             </div>
           </div>
 
           {customerType === 'company' && (
             <div>
               <label className="block text-xs text-white/50 mb-1.5">{t('companyName')} *</label>
-              <input required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+              <input name="companyName" required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
             </div>
           )}
 
@@ -90,22 +123,22 @@ export default function QuoteForm() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-xs text-white/50 mb-1.5">{t('vehicleMake')} *</label>
-              <input required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+              <input name="vehicleMake" required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
             </div>
             <div>
               <label className="block text-xs text-white/50 mb-1.5">{t('vehicleYear')}</label>
-              <input type="number" min="1900" max="2030" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+              <input name="vehicleYear" type="number" min="1900" max="2030" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-xs text-white/50 mb-1.5">{t('vehicleWeight')} *</label>
-              <input required type="number" min="0" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+              <input name="vehicleWeight" required type="number" min="0" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
             </div>
             <div>
               <label className="block text-xs text-white/50 mb-1.5">{t('vehicleCondition')}</label>
-              <select className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors [color-scheme:dark]">
+              <select name="vehicleCondition" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors [color-scheme:dark]">
                 <option value="running">{t('running')}</option>
                 <option value="not_running">{t('notRunning')}</option>
               </select>
@@ -119,21 +152,21 @@ export default function QuoteForm() {
 
           <div>
             <label className="block text-xs text-white/50 mb-1.5">{t('pickup')} *</label>
-            <input required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+            <input name="pickup" required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
           </div>
           <div>
             <label className="block text-xs text-white/50 mb-1.5">{t('delivery')} *</label>
-            <input required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+            <input name="delivery" required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-xs text-white/50 mb-1.5">{t('date')} *</label>
-              <input required type="date" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors [color-scheme:dark]" />
+              <input name="date" required type="date" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors [color-scheme:dark]" />
             </div>
             <div>
               <label className="block text-xs text-white/50 mb-1.5">{t('priority')}</label>
-              <select className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors [color-scheme:dark]">
+              <select name="priority" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors [color-scheme:dark]">
                 <option value="standard">{t('standard')}</option>
                 <option value="express">{t('express')}</option>
               </select>
@@ -143,11 +176,16 @@ export default function QuoteForm() {
           <div>
             <label className="block text-xs text-white/50 mb-1.5">{t('notes')}</label>
             <textarea
+              name="notes"
               rows={3}
               placeholder={t('notesPlaceholder')}
               className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-[#C9A84C]/50 transition-colors resize-none"
             />
           </div>
+
+          {error && (
+            <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3">{error}</p>
+          )}
 
           <button
             type="submit"

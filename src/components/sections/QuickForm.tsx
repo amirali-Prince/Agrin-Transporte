@@ -9,14 +9,41 @@ export default function QuickForm() {
   const locale = useLocale()
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [customerType, setCustomerType] = useState<'private' | 'company'>('private')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 800))
-    setLoading(false)
-    setSubmitted(true)
+    setError(null)
+
+    const fd = new FormData(e.currentTarget)
+    const payload = {
+      formType: 'quick',
+      customerType,
+      firstName: fd.get('firstName') as string,
+      lastName: fd.get('lastName') as string,
+      email: fd.get('email') as string,
+      phone: fd.get('phone') as string,
+      pickup: fd.get('pickup') as string,
+      delivery: fd.get('delivery') as string,
+      vehicle: fd.get('vehicle') as string,
+      date: fd.get('date') as string,
+    }
+
+    try {
+      const res = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      if (!res.ok) throw new Error()
+      setSubmitted(true)
+    } catch {
+      setError('Etwas ist schiefgelaufen. Bitte ruf uns direkt an: +41 76 545 66 06')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -64,11 +91,11 @@ export default function QuickForm() {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs text-white/50 mb-1.5">{t('firstName')} *</label>
-                <input required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+                <input name="firstName" required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
               </div>
               <div>
                 <label className="block text-xs text-white/50 mb-1.5">{t('lastName')} *</label>
-                <input required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+                <input name="lastName" required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
               </div>
             </div>
 
@@ -76,37 +103,41 @@ export default function QuickForm() {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs text-white/50 mb-1.5">{t('email')} *</label>
-                <input required type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+                <input name="email" required type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
               </div>
               <div>
                 <label className="block text-xs text-white/50 mb-1.5">{t('phone')} *</label>
-                <input required type="tel" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+                <input name="phone" required type="tel" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
               </div>
             </div>
 
             {/* Locations */}
             <div>
               <label className="block text-xs text-white/50 mb-1.5">{t('pickup')} *</label>
-              <input required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+              <input name="pickup" required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
             </div>
             <div>
               <label className="block text-xs text-white/50 mb-1.5">{t('delivery')} *</label>
-              <input required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+              <input name="delivery" required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
             </div>
 
             {/* Vehicle + Date row */}
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs text-white/50 mb-1.5">{t('vehicle')} *</label>
-                <input required placeholder={t('vehiclePlaceholder')} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
+                <input name="vehicle" required placeholder={t('vehiclePlaceholder')} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-[#C9A84C]/50 transition-colors" />
               </div>
               <div>
                 <label className="block text-xs text-white/50 mb-1.5">{t('date')} *</label>
-                <input required type="date" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors [color-scheme:dark]" />
+                <input name="date" required type="date" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#C9A84C]/50 transition-colors [color-scheme:dark]" />
               </div>
             </div>
 
             <p className="text-xs text-white/30">{t('dateNote')}</p>
+
+            {error && (
+              <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3">{error}</p>
+            )}
 
             <button
               type="submit"
